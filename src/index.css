@@ -1,13 +1,56 @@
-body {
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+
+/* default styles */
+* {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  font-family: "Quicksand";
+  
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.header {
+  grid-template-columns: 1fr 1fr; 
+  background-color: #42a5f5;
+  border-bottom: 1px solid #f2f2f2; 
+  color: rgb(255, 255, 255);
+}
+
+.navbar{
+  display: flex;
+}
+
+.navbar .links {
+  margin-left: auto;
+}
+
+
+.navbar a {
+  margin-left: 16px;
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+  padding: 6px;
+}
+
+.navbar a:hover {
+  color: #35f15e;
+}
+
+body{
+    background-color: #42a5f5;
+    color: rgb(255, 255, 255);
+    padding: 20px;    
+}
+
+
+.video-list{
+  padding: 10px 16px;
+  margin: 20px 0;
+  border-bottom: 1px solid #fafafa;
+  border-left: 1px solid #fafafa;
+  border-right: 1px solid #fafafa;
+  border-top:  1px solid #fafafa;
+}
+
+.Error404 {
+  text-align: center;
+  margin: 0 auto;
 }

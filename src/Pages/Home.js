@@ -28,8 +28,9 @@ const Home = () => {
   }, [])
 
   return (
-    <div className="page home">
+    <div className="page-home">
       {fetchError && (<p>{fetchError}</p>)}
+        <h1 >Titles</h1>
        {videos && (
         <div className="videos">
             {videos.map(video =>(
