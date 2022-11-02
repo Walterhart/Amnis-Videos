@@ -1,9 +1,9 @@
 import { supabase } from "../config/supabaseClient";
 import { useEffect, useState } from 'react'
-import VidoeList from "../VideoList";
+import VidoeList from "../VideoComponents/VideoList";
+
 
 const Home = () => {
-  
   const [fetchError, setFetchError] = useState(null)
   const [videos, setvideos] = useState(null)
   const [orderBy, setOrderBy] = useState('title')
@@ -14,7 +14,7 @@ const Home = () => {
         .from('netflix_titles')
         .select('*', {count: 'exact'})
         .order(orderBy)
-        .range(0,9)    
+        .range(0,19)    
       if (error) {
         setFetchError('Could not fetch the videos')
         setvideos(null)

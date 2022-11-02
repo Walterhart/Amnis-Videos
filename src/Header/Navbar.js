@@ -3,20 +3,25 @@
 
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { supabase } from "./config/supabaseClient";
+import { supabase } from "../config/supabaseClient";
+import { useNavigate } from "react-router-dom";
+
 
 const Navbar = () => {
+    const navigate = useNavigate();
     const [user,setUser] =useState({})
     useEffect(() =>{
         async function getUserData(){
             await supabase.auth.getUser().then((value) =>{
                 if(value.data?.user){
-                    console.log(value.data.user)
                     setUser(value.data.user)
                 }
             })
         }
         getUserData()
+        if(user){
+            console.log(user)
+        }
     }, [])
 
     async function signOutUser(){     
@@ -28,15 +33,27 @@ const Navbar = () => {
 
     }
     
+    
     return ( 
         <nav className="navbar">
             <h1> Amnis Videos </h1>
             <div className="links">
                 <Link to= "/"> Home</Link>
-                <Link to= "/add-video"> Add Video</Link>
+                <Link to= "/Add-video"> Add Video</Link>
                 <Link to= "/favorite"> Favorite</Link> 
+                
+                {Object.keys(user).length !== 0?
+            <>
+                <h1>  {user.id} </h1>
+                <button onClick={() => signOutUser()}>signout</button>    
+            </>
+            :
+            <>
                 <Link to= "/Login"> Login</Link>
-                <button onClick={() => signOutUser()}>signout</button>      
+            </>
+            }
+
+                  
             </div>
         </nav>
 

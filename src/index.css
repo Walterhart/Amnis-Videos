@@ -54,3 +54,39 @@ body{
   text-align: center;
   margin: 0 auto;
 }
+
+.add-video{
+  max-width: 400px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.add-video h2 {
+  font-size: 20px;
+  color: #fffbfd;
+  margin-bottom: 10px;
+}
+.add-video input, .add-video textarea, .add-video select{
+  color: #42a5f5;
+  font-weight: bold; 
+  width: 100%;
+  padding: 6px 10px;
+  margin: 10px 0;
+  border: 1px solid #ddd;
+  box-sizing: border-box;
+  display: block;
+}
+.add-video select option {
+  background-color: #fafafa;
+  color: #42a5f5;
+}
+
+.add-video button {
+  background: #fafafa;
+  color: #42a5f5;
+  border: 0;
+  font-weight: bold;
+  padding: 8px;
+  border-radius: 10px;
+  cursor: pointer;
+}
