@@ -90,3 +90,32 @@ body{
   border-radius: 10px;
   cursor: pointer;
 }
+
+.video-details h3{
+  margin-top: 10px;
+}
+.video-details p{
+  text-indent: 30px;
+}
+
+
+.video-list {
+  padding: 10px 16px;
+  margin: 20px 0;
+  border-bottom: 1px solid #fafafa;
+  border-left: 1px solid #fafafa;
+  border-right: 1px solid #fafafa;
+  border-top:  1px solid #fafafa;
+}
+.video-list:hover {
+  box-shadow: 1px 3px 5px #fafafa;;
+}
+.video-list a {
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+}
+.video-list h2 {
+  font-size: 20px;
+  color: #fafafa;
+  margin-bottom: 8px;
+}

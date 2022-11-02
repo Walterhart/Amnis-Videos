@@ -3,14 +3,13 @@ import { Link } from "react-router-dom";
 const VidoeList = ({video}) => {
     return (  
         <div className="video-list">
-            <h2>{video.title}</h2>
-            <p>{video.description}</p>
-            <h3>{video.type}</h3>
-            <div className="video-button">
+            <Link to={'/videos/' + video.show_id}> 
+            <h2> title:{video.title}</h2>
 
-            <Link to={'/videos/' + video.show_id}> xxx</Link>
+            <p> {video.description}</p>
+            <h3> {video.type}</h3>
+            </Link>
             </div>
-        </div>
     );
 }
  

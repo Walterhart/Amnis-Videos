@@ -26,15 +26,19 @@ const VideoDetail = () => {
     return ( 
         <div className="video-details">
             <h1>{video.title}</h1>
-            <h3>{video.type}</h3>
-            <h3>{video.rating}</h3>
-            <h3>{video.duration}</h3>
-            <h3>Genres:{video.listed_in} </h3>
-            <p>Description: {video.description}</p>
-            <h3>Director: {video.director}</h3>
-            <h4>Cast: {video.cast}</h4>
-            <h4> Release year: {video.release_year}</h4>
-            <h4> Country available: {video.country}</h4>
+            <h3>Description:</h3>
+            <p> {video.description}</p>
+            <h3>{video.type} {video.duration}</h3>
+            <h3> {video.rating}</h3>
+            <h3>Genre: {video.listed_in} </h3>
+         
+            
+            <h3>Cast: </h3>
+            <p>{video.cast}</p>
+            <h3> Release year: </h3>
+            <p>{video.release_year}</p>
+            <h3> Country: </h3>
+            <p>{video.country}</p>
 
         
         </div>

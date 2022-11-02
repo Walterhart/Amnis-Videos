@@ -19,6 +19,7 @@ const Profile = () => {
         }
         getUserData()
     }, [])
+    
 
     async function signOutUser(){
         const { error } = await supabase.auth.signOut()
@@ -35,7 +36,7 @@ const Profile = () => {
             <>
                 <h1> Profile: </h1>
 
-                <h3>email: {user.email}</h3>
+                <h3>Email: {user.email}</h3>
                 <button onClick={() => signOutUser()}>signout</button>
             </>
             :
