@@ -19,6 +19,9 @@ const Profile = () => {
 
     async function signOutUser(){
         const { error } = await supabase.auth.signOut()
+        if(error){
+            console.log(error)
+        }
         navigate('/Login')
 
     }

@@ -21,7 +21,6 @@ const Home = () => {
       }
       if (data) {
         setvideos(data)
-        console.log(videos)
         setFetchError(null)
       }
     }
@@ -29,8 +28,7 @@ const Home = () => {
     fetchvideos()
 
   }, [orderBy])
-  console.log('user:',supabase.auth.user)
-
+ 
   return (
     <div className="page-home">
       {fetchError && (<p>{fetchError}</p>)}
