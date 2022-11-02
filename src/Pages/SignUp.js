@@ -87,8 +87,8 @@ const SignUp = () => {
                             <Typography variation = "caption"> Please fill out form to create an account</Typography>
                             <TextField onChange ={(e) => setUserName(e.target.value)} id = 'userName'label = "Username" variant = "standard" placeholder = "Enter username" fullWidth helperText = {userNameErrorText} required error = {userNameError}/>
                             <TextField onChange ={(e) => setEmail(e.target.value)} id = 'email'label = "Email" variant = "standard" placeholder = "Enter email" type = "Email" fullWidth required error = {emailError}/>
-                            <TextField onChange ={(e) => setPassword(e.target.value)} id = 'password' label = "Password" variant = "standard" placeholder = "Enter passoword" type = "password"  helperText = {passwordErrorText} fullWidth required error = {passwordError}/>
-                            <TextField onChange ={(e) => setConfirmPassword(e.target.value)} label = "Confirm Password" variant = "standard" placeholder = "Confirm password" type = "password" helperText = {confirmPasswordErrorText} fullWidth required error = {confirmPasswordError}/>
+                            <TextField onChange ={(e) => setPassword(e.target.value)} id = 'password' label = "Password" variant = "standard" placeholder = "Enter passoword" type = "text"  helperText = {passwordErrorText} fullWidth required error = {passwordError}/>
+                            <TextField onChange ={(e) => setConfirmPassword(e.target.value)} label = "Confirm Password" variant = "standard" placeholder = "Confirm password" type = "text" helperText = {confirmPasswordErrorText} fullWidth required error = {confirmPasswordError}/>
 
                             <Button type ='submit' 
                             variant = "contained"  

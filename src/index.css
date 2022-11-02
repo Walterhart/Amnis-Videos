@@ -12,15 +12,21 @@
   background-color: #42a5f5;
   border-bottom: 1px solid #f2f2f2; 
   color: rgb(255, 255, 255);
+  
 }
 
 .navbar{
   display: flex;
+  border-bottom: 1px solid #fafafa;
 }
 
-.navbar .links {
+.navbar .links  {
   margin-left: auto;
 }
+.navbar .h3  {
+  padding-left: auto;
+}
+
 
 
 .navbar a {
@@ -118,4 +124,39 @@ body{
   font-size: 20px;
   color: #fafafa;
   margin-bottom: 8px;
+}
+.navbar button{
+  background: none!important;
+  border: none;
+  color: #fafafa;
+  padding: 0!important;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.navbar b:hover {
+  color: #35f15e;
+}
+
+.page-home button {
+  padding: 5px 5px;
+  font-size: 15px;
+  text-align: center;
+  cursor: pointer;
+  outline: none;
+  color: #42a5f5;
+  background-color: #fafafa;
+  border: 1px solid #42a5f5;
+  font-weight: bold;
+}
+
+.page-home button:hover {background-color: #fafafa}
+
+.page-home button:active {
+  background-color: #fafafa;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+.login link{
+  text-decoration: none;
 }

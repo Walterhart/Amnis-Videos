@@ -8,6 +8,7 @@ const Home = () => {
   const [videos, setvideos] = useState(null)
   const [orderBy, setOrderBy] = useState('title')
 
+
   useEffect(() => {
     const fetchvideos = async () => {
       const { data, error } = await supabase
@@ -37,7 +38,11 @@ const Home = () => {
             <div className="order-by">
                 <p>order by:</p>
                 <button onClick={() => setOrderBy('title')}>Title</button>
+
                 <button onClick={() => setOrderBy('type')}>Type of video</button>
+                <button onClick={() => setOrderBy('director')}>Type of video</button>
+                <button onClick={() => setOrderBy('release_year')}>Year released</button>
+                <button onClick={() => setOrderBy('video.country')}>Country</button>
             </div>
             {videos.map(video =>(
                 <VidoeList key={video.show_id} video={video}/>

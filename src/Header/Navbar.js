@@ -28,9 +28,10 @@ const Navbar = () => {
     let { error } = await supabase.auth.signOut()
         if(error){
             console.log(error)
+            return
         }
-        console.log("clicked")
-
+        navigate('/')
+    
     }
     
     
@@ -44,8 +45,8 @@ const Navbar = () => {
                 
                 {Object.keys(user).length !== 0?
             <>
-                <h1>  {user.email} </h1>
-                <button onClick={() => signOutUser()}>signout</button>    
+                <Link to= "/Profile">{user.email} </Link>
+                <button onClick={() => signOutUser()}>Logout</button>    
             </>
             :
             <>

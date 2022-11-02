@@ -1,4 +1,5 @@
-import {Button, Grid, Paper, Link, TextField, Typography} from "@mui/material";
+import {Button, Grid, Paper, TextField, Typography} from "@mui/material";
+import { Link } from "react-router-dom";
 import React, {  useState } from "react";
 import FormControlLabel from '@mui/material/FormControlLabel';
 import Checkbox from '@mui/material/Checkbox';
@@ -24,7 +25,6 @@ const Login = () => {
         }
     })
     
-
     const handleSubmit  = async (e) =>{
         e.preventDefault();
         console.log(email,":",password)
@@ -78,7 +78,7 @@ const Login = () => {
                         </Typography>
                         <Typography>
                             No account? 
-                            <Link to ='/sign-up' sx= {{textDecoration:"none", m: 0.5 }}>
+                            <Link to ='/Sign-up'>
                                     Sign up
                             </Link>
                         </Typography>
