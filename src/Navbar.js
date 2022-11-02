@@ -19,8 +19,8 @@ const Navbar = () => {
         getUserData()
     }, [])
 
-    async function signOutUser(){
-        const { error } = await supabase.auth.signOut()
+    async function signOutUser(){     
+    let { error } = await supabase.auth.signOut()
         if(error){
             console.log(error)
         }

@@ -69,7 +69,7 @@ const SignUp = () => {
       console.log("data sent")
 
         if (data){
-            console.log(data)
+            console.log("si:",data)
             console.log(supabase.auth.user)
             navigate('/')
         }

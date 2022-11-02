@@ -26,7 +26,7 @@ const Profile = () => {
         <div>
             {Object.keys(user).length !== 0?
             <>
-                <h1> Made it</h1>
+                <h1> Made it: {user.email} </h1>
                 <button onClick={() => signOutUser()}>signout</button>
             </>
             :
