@@ -17,8 +17,9 @@ function App() {
       <Route path = "/" element={ <Home/> }/>             
       <Route path = "/Sign-up" element={<SignUp/>}/>   
       <Route path = "/Login" element= {<Login/>}/>  
-      <Route path = "/Profile" element={<Profile/>} />      
-      <Route path = '*' element={<Error404/>} />         
+      <Route path = "/Profile" element={<Profile/>} />   
+      <Route path = "/videos/:id" element={<VideoDetail/>}/>      
+      <Route path = '/*' element={<Error404/>} />         
     </Routes>
     </BrowserRouter>
 

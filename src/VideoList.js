@@ -8,7 +8,7 @@ const VidoeList = ({video}) => {
             <h3>{video.type}</h3>
             <div className="video-button">
 
-            <Link to={'/' + video.show_id}> xxx</Link>
+            <Link to={'/videos/' + video.show_id}> xxx</Link>
             </div>
         </div>
     );
