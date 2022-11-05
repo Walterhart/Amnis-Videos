@@ -40,7 +40,7 @@ const Home = () => {
                 <button onClick={() => setOrderBy('title')}>Title</button>
 
                 <button onClick={() => setOrderBy('type')}>Type of video</button>
-                <button onClick={() => setOrderBy('director')}>Type of video</button>
+                <button onClick={() => setOrderBy('director')}> Director</button>
                 <button onClick={() => setOrderBy('release_year')}>Year released</button>
                 <button onClick={() => setOrderBy('video.country')}>Country</button>
             </div>

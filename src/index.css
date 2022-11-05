@@ -69,7 +69,7 @@ body{
 
 .add-video h2 {
   font-size: 20px;
-  color: #fffbfd;
+  color: #42a5f5;
   margin-bottom: 10px;
 }
 .add-video input, .add-video textarea, .add-video select{
@@ -78,7 +78,6 @@ body{
   width: 100%;
   padding: 6px 10px;
   margin: 10px 0;
-  border: 1px solid #ddd;
   box-sizing: border-box;
   display: block;
 }
@@ -88,9 +87,9 @@ body{
 }
 
 .add-video button {
-  background: #fafafa;
-  color: #42a5f5;
-  border: 0;
+  background: #42a5f5;
+  color: #fafafa;
+
   font-weight: bold;
   padding: 8px;
   border-radius: 10px;
