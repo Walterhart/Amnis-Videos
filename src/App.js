@@ -35,6 +35,11 @@ function App() {
           <Route path = "/Login" element= {<Login/>}/>  
           <Route path = "/Profile" element={<Profile/>} />   
           <Route path = "/videos/:id" element={<VideoDetail/>}/> 
+          <Route path = "/Disney/:id" element={<VideoDetail platform='disney'/>}/>
+          <Route path = "/Netflix/:id" element={<VideoDetail  platform='netflix'/>}/> 
+          <Route path = "/Paramount/:id" element={<VideoDetail  platform='paramount'/>}/> 
+          <Route path = "/Amazon/:id" element={<VideoDetail  platform='amazon'/>}/> 
+          <Route path = "/Hulu/:id" element={<VideoDetail platform='hulu'/>}/>  
           <Route path = "/Add-video" element={<AddVideo/>}/>       
           <Route path = '/*' element={<Error404/>} />         
         </Routes>

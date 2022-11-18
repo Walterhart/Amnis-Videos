@@ -43,7 +43,7 @@ const Hulu = () => {
                 <button onClick={() => setOrderBy('release_year')}>Year released</button>
             </div>
           {videos.map(video =>(
-              <VidoeList key={video.video_id} video={video}/>
+              <VidoeList key={video.video_id} video={video} platform='Hulu'/>
           ))}
       </div>
      )}
