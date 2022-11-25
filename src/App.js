@@ -7,7 +7,6 @@ import Login from './Pages/Login';
 import VideoDetail from './VideoComponents/VideoDetails';
 import Error404 from './Pages/Error404';
 import AddVideo from './Pages/AddVido';
-import {QueryClient, QueryClientProvider} from '@tanstack/react-query'
 import HomePage from './Pages/HomePage';
 import Netflix from './Pages/Netflix';
 import Paramount from './Pages/Paramount';
@@ -16,9 +15,7 @@ import Amazon from './Pages/Amazon';
 import Disney from './Pages/Disney';
 
 function App() {
-  const client = new QueryClient();
   return (
-    <QueryClientProvider client={client}>
       <BrowserRouter>
         <header>
           <Navbar/>
@@ -44,8 +41,6 @@ function App() {
           <Route path = '/*' element={<Error404/>} />         
         </Routes>
       </BrowserRouter>
-    </QueryClientProvider>
-
   );
 }
 
