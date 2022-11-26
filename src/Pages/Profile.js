@@ -1,24 +1,12 @@
 import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
 import { supabase } from "../config/supabaseClient";
+import useFetchUser from "../VideoComponents/useFetchUser";
+import { useNavigate } from "react-router-dom";
 
 const Profile = () => {
-    const [user,setUser] =useState({})
+    const {user, isPending} = useFetchUser()
     const [profile,setProfile] =useState({})
-    const [fetchError, setFetchError]= useState('')
-     const navigate = useNavigate();
-    useEffect(() =>{
-        async function getUserData(){
-            await supabase.auth.getUser().then((value) =>{
-                if(value.data?.user){
-                    
-                    setUser(value.data.user)
-                    console.log("user:",user)
-                }
-            })
-        }
-        getUserData()
-    }, [])
+    const navigate = useNavigate();
     
 
     async function signOutUser(){

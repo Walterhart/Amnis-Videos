@@ -53,7 +53,7 @@ const VideoDetail = ({platform}) => {
         fetchDirectors()
         fetchCasts()
         
-    },[id, navigate])
+    },[id, navigate,platform])
     return ( 
         <div className="video-details">
             <h1>{video.title}</h1>

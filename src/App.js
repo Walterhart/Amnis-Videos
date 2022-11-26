@@ -13,6 +13,7 @@ import Paramount from './Pages/Paramount';
 import Hulu from './Pages/Hulu';
 import Amazon from './Pages/Amazon';
 import Disney from './Pages/Disney';
+import Favorite from './Pages/Favorite';
 
 function App() {
   return (
@@ -27,7 +28,8 @@ function App() {
           <Route path = "/Paramount" element={<Paramount/>}/>
           <Route path = "/Disney" element={< Disney />}/>
           <Route path = "/Amazon" element={<Amazon/>}/>
-          <Route path = "/Hulu" element={< Hulu />}/>
+          <Route path = "/Hulu" element={<Hulu />}/>
+          <Route path = "/Favorite" element={<Favorite />}/>
           <Route path = "/Sign-up" element={<SignUp/>}/>   
           <Route path = "/Login" element= {<Login/>}/>  
           <Route path = "/Profile" element={<Profile/>} />   
