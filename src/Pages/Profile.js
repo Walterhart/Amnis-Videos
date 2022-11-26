@@ -2,35 +2,12 @@ import { useEffect, useState } from "react";
 import { supabase } from "../config/supabaseClient";
 import useFetchUser from "../VideoComponents/useFetchUser";
 import { useNavigate } from "react-router-dom";
+import useFetchProfile from "../VideoComponents/useFetechProfile";
 
 const Profile = () => {
-    const {user, isPending} = useFetchUser()
-    const [profile,setProfile] =useState('')
+    const {profile, isPending} = useFetchProfile()
     const navigate = useNavigate();
   
-    
-    useEffect(()=>{
-        const fetchProfile =async() =>{
-            const { data, error } = await supabase
-            .rpc('get_profile')
-            .eq('id', user.id)
-            .single()
-                if(error){
-                    console.log(error)
-                 }
-                if (data){
-                    setProfile(data)
-                    console.log('loaded')
-                }
-                
-        }
-        if(user !== undefined)
-        {
-         fetchProfile()
-        }
-       
-    },[user])
-
     async function signOutUser(){
         const { error } = await supabase.auth.signOut()
         if(error){
