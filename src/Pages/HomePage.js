@@ -6,23 +6,23 @@ const HomePage = () => {
 
     function selectPlatform(platform) {
         console.log(platform)
-        if(platform =='Amazon')
+        if(platform ==='Amazon')
         {
             navigate('/Amazon')
         }
-        if(platform =='Disney')
+        if(platform ==='Disney')
         {
             navigate('/Disney') 
         }
-        if(platform =='Hulu')
+        if(platform ==='Hulu')
         {
             navigate('/Hulu')
         }
-        if(platform =='Netflix')
+        if(platform ==='Netflix')
         {
             navigate('/Netflix') 
         }
-        if(platform =='Paramount')
+        if(platform ==='Paramount')
         {
             navigate('/Paramount') 
         }

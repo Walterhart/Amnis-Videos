@@ -5,24 +5,34 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { supabase } from "../config/supabaseClient";
 import { useNavigate } from "react-router-dom";
+import useFetchUser from "../VideoComponents/useFetchUser";
 
 
 const Navbar = () => {
-    const navigate = useNavigate();
-    const [user,setUser] =useState({})
-    useEffect(() =>{
-        async function getUserData(){
-            await supabase.auth.getUser().then((value) =>{
-                if(value.data?.user){
-                    setUser(value.data.user)
+    const navigate = useNavigate()
+    const {user, isPending} = useFetchUser()
+    const [profile,setProfile] =useState('')
+    useEffect(()=>{
+        const fetchProfile =async() =>{
+            const { data, error } = await supabase
+            .rpc('get_profile')
+            .eq('id', user.id)
+            .single()
+                if(error){
+                    console.log(error)
+                 }
+                if (data){
+                    setProfile(data)
+                    console.log('User fetched')
                 }
-            })
+                
         }
-        getUserData()
-        if(user){
-            console.log(user)
+        if(user !== undefined)
+        {
+         fetchProfile()
         }
-    }, [])
+       
+    },[user])
 
     async function signOutUser(){     
     let { error } = await supabase.auth.signOut()
@@ -43,9 +53,9 @@ const Navbar = () => {
                 <Link to= "/Add-video"> Add Video</Link>
                 <Link to= "/favorite"> Favorite</Link> 
                 
-                {Object.keys(user).length !== 0?
+                {profile && profile !== undefined ?
             <>
-                <Link to= "/Profile">{user.email} </Link>
+                <Link to= "/Profile">{profile.user_name} </Link>
                 <button onClick={() => signOutUser()}>Logout</button>    
             </>
             :

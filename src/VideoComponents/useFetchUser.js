@@ -4,7 +4,7 @@ import { supabase } from "../config/supabaseClient";
 
 const useFetchUser = () => {
 
-    const [user,setUser] =useState({})
+    const [user,setUser] =useState('')
     const [isPending, setIsPending] = useState(true);
     useEffect(() =>{
         async function getUserData(){
@@ -15,6 +15,7 @@ const useFetchUser = () => {
                 }
             })
         }
+          
         getUserData()
     }, [])
     
