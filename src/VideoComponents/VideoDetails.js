@@ -31,7 +31,6 @@ const VideoDetail = ({platform}) => {
                     navigate('/'+platform, {replace: true})
                  }
                 if (data){
-                    console.log('video',data)
                     setCasts(data)  
                 }
                 
@@ -45,7 +44,6 @@ const VideoDetail = ({platform}) => {
                     navigate('/'+platform, {replace: true})
                  }
                 if (data){
-                    console.log('Director',data)
                     setDirectors(data)  
                 }
                 

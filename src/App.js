@@ -21,7 +21,7 @@ function App() {
           <Navbar/>
         </header>
         <Routes> 
-          <Route path = "/" element={ <Home/> }/>    
+          <Route path = "/" element={ <HomePage/> }/>    
           <Route path = "/HomePage" element={ <HomePage />}/>  
           <Route path = "/Netflix" element={< Netflix />}/>
           <Route path = "/Paramount" element={<Paramount/>}/>
