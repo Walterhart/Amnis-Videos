@@ -31,4 +31,4 @@ const useFetchvideo = ({platform}) => {
 }
 
  
-export default useFetchvideos;
+export default useFetchvideo;

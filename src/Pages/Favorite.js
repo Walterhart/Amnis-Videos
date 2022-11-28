@@ -7,8 +7,12 @@ import VidoeList from "../VideoComponents/VideoList";
 
 const Favorite = () => {
     const {user, isPending} = useFetchUser('')
-    const {favorites} =useFetchFavorite('')
-    console.log(favorites)// favorites.video_id
+    const {favorites: netflix} =useFetchFavorite('netflix')
+    const {favorites: amazon} =useFetchFavorite('amazon')
+    const {favorites: disney} =useFetchFavorite('disney')
+    const {favorites: hulu} =useFetchFavorite('hulu')
+    const {favorites: paramount} =useFetchFavorite('paramount')
+    const {favorites: hbo} =useFetchFavorite('hbo')
     const navigate = useNavigate();
     return ( 
         
@@ -16,24 +20,24 @@ const Favorite = () => {
         { isPending && <div>Loading...</div> }
         {Object.keys(user).length !== 0?
         <>
-
             <h3>Favorite</h3>
             <h2>Netflix</h2>
-            { favorites && favorites !==undefined && favorites.map(favorite =>(
-              < VidoeList key={favorite.video_id} video={favorite} platform='Netflix'/>
+            { netflix &&  netflix !==undefined &&  netflix.map(video =>(
+              < VidoeList key={video.video_id} video={video} platform='Netflix'/>
+          ))}
+
+            <h2>Hulu</h2>
+            { hulu &&  hulu !==undefined &&  hulu.map(video =>(
+              < VidoeList key={video.video_id} video={video} platform='hulu'/>
           ))}
            
-            
-            
+           
         </>
         :
         <>
             <h1> Please Login</h1>
             <button onClick={() =>{ navigate('/Login')} }>Login</button>
-          
-            
-
-            
+                      
         </>
         }
    </div>

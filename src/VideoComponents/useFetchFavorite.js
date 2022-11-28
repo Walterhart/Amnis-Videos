@@ -2,16 +2,15 @@ import { useEffect, useState } from "react";
 import { supabase } from "../config/supabaseClient";
 import useFetchUser from "./useFetchUser";
 
-const useFetchFavorite = () => {
+const useFetchFavorite = (platform) => {
     const {user} = useFetchUser('')
     const [isPending, setIsPending] = useState(true);
     const [favorites,setFavorites] =useState(null)
-  
     useEffect(()=>{
         const fetchFavorite =async() =>{
            
             const { data, error } = await supabase
-            .rpc('get_netflix_favorite', {
+            .rpc('get_'+platform+'_favorite', {
                 user_num: user.id
               })
                 if(error && error.code!== '22P02' ){
@@ -30,7 +29,7 @@ const useFetchFavorite = () => {
         }
         
        
-    },[user])
+    },[user, platform])
 
     return {favorites, isPending};
 }

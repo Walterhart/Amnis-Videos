@@ -1,4 +1,5 @@
 const VideoFavoriteList = ({favorite,plateform}) => {
+    
     return ( 
         <div className="video-list">
         <h2> {favorite.video_id}</h2>
