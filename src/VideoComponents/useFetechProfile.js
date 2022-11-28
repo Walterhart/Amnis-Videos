@@ -4,10 +4,10 @@ import { supabase } from "../config/supabaseClient";
 import useFetchUser from "./useFetchUser";
 
 const useFetchProfile = () => {
-    const {user} = useFetchUser()
+    const {user} = useFetchUser(null)
     const [isPending, setIsPending] = useState(true);
     const [profile,setProfile] =useState('')
-    
+  
     useEffect(()=>{
         const fetchProfile =async() =>{
             const { data, error } = await supabase
