@@ -14,6 +14,7 @@ import Hulu from './Pages/Hulu';
 import Amazon from './Pages/Amazon';
 import Disney from './Pages/Disney';
 import Favorite from './Pages/Favorite';
+import HBO from './Pages/HBO';
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
           <Route path = "/Paramount" element={<Paramount/>}/>
           <Route path = "/Disney" element={< Disney />}/>
           <Route path = "/Amazon" element={<Amazon/>}/>
+          <Route path = "/HBO" element={<HBO/>}/>
           <Route path = "/Hulu" element={<Hulu />}/>
           <Route path = "/Favorite" element={<Favorite />}/>
           <Route path = "/Sign-up" element={<SignUp/>}/>   
@@ -38,6 +40,7 @@ function App() {
           <Route path = "/Netflix/:id" element={<VideoDetail  platform='netflix'/>}/> 
           <Route path = "/Paramount/:id" element={<VideoDetail  platform='paramount'/>}/> 
           <Route path = "/Amazon/:id" element={<VideoDetail  platform='amazon'/>}/> 
+          <Route path = "/HBO/:id" element={<VideoDetail platform='hbo'/>}/>
           <Route path = "/Hulu/:id" element={<VideoDetail platform='hulu'/>}/>  
           <Route path = "/Add-video" element={<AddVideo/>}/>       
           <Route path = '/*' element={<Error404/>} />         

@@ -14,6 +14,11 @@ const HomePage = () => {
         {
             navigate('/Disney') 
         }
+        if(platform ==='HBO')
+        {
+            navigate('/HBO') 
+        }
+    
         if(platform ==='Hulu')
         {
             navigate('/Hulu')
@@ -32,6 +37,7 @@ const HomePage = () => {
         <div className="homePage">
             <button onClick={() => selectPlatform('Amazon')}>Amazon</button>
             <button onClick={() => selectPlatform('Disney')}>Disney</button>
+            <button onClick={() => selectPlatform('HBO')}>HBO</button>  
             <button onClick={() => selectPlatform('Hulu')}>Hulu</button>
             <button onClick={() => selectPlatform('Netflix')}>Netflix</button>
             <button onClick={() => selectPlatform('Paramount')}>Paramount</button>  
