@@ -6,7 +6,7 @@ import { AiFillStar } from "react-icons/ai";
 import useFetchFavorite from "./useFetchFavorite";
 import FavoriteControl from "./FavortieControl.";
 import useFetchUser from "./useFetchUser";
-import RecocomendByDirector from "./ReccomendByDirector";
+import RecommendByDirector from "./ReccomendByDirector";
 
 
 const VideoDetail = ({platform}) => {
@@ -107,7 +107,7 @@ const VideoDetail = ({platform}) => {
             
             {directors && directors!== null && directors.map((director) => (
             
-            <RecocomendByDirector key={director.id} director={director}  platform={platform}/> 
+            <RecommendByDirector key={director.id} director={director}  platform={platform}/> 
         
             
           ))}

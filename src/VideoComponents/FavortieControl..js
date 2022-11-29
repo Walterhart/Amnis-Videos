@@ -21,7 +21,7 @@ const FavoriteControl = ({id, platform, user}) => {
 
     if (error) console.error(error)
     else console.log(data)
-    console.log('adeded',user,id)
+    setIsFound(true)
 
     }
     const handleRemove  = async (e) =>{
@@ -34,8 +34,8 @@ const FavoriteControl = ({id, platform, user}) => {
 
         if (error) console.error(error)
         else console.log(data)
-       
-        console.log('remove', user.id,id)
+
+        setIsFound(false)
 
     }
 

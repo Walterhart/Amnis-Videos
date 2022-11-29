@@ -4,7 +4,7 @@ import { supabase } from "../config/supabaseClient"
 import VidoeList from "./VideoList"
 
 
-const RecocomendByDirector = ({platform, director}) => {
+const RecommendByDirector = ({platform, director}) => {
     
     const [videos,setVideos]= useState()
     //console.log('Passin',platform, director)
@@ -32,7 +32,7 @@ const RecocomendByDirector = ({platform, director}) => {
    
     return ( 
         <div>
-        <h3>Reccomend base off of {director.name}:</h3>
+        <h3>Recommend base off of {director.name}:</h3>
         {videos && videos.map(video =>(
                 <VidoeList key={video.video_id} video={video}/>
             ))}
@@ -41,4 +41,4 @@ const RecocomendByDirector = ({platform, director}) => {
      );
 }
  
-export default RecocomendByDirector;
+export default RecommendByDirector;
