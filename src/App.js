@@ -1,5 +1,4 @@
-import Home from './Pages/Home';
-import {BrowserRouter, BrowserRouter as Router, Route, Routes, Switch } from 'react-router-dom';
+import {BrowserRouter, Route, Routes} from 'react-router-dom';
 import Navbar from './Header/Navbar';
 import SignUp from './Pages/SignUp';
 import Profile from './Pages/Profile';

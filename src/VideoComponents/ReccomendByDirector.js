@@ -19,16 +19,14 @@ const RecommendByDirector = ({platform, director}) => {
         if (error) console.error(error)
         else {
 
-            setVideos(data)
-            console.log('datavalue',data)
-            
+            setVideos(data)     
         }
     }
     if(director !==null || director !==undefined){
-    fetchvideos()
+        fetchvideos()
     }
   
-    },[])
+    },[director,platform])
    
     return ( 
         <div>

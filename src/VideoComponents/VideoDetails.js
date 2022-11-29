@@ -1,9 +1,6 @@
 import { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { supabase } from "../config/supabaseClient";
-import { AiOutlineStar } from "react-icons/ai";
-import { AiFillStar } from "react-icons/ai";
-import useFetchFavorite from "./useFetchFavorite";
 import FavoriteControl from "./FavortieControl.";
 import useFetchUser from "./useFetchUser";
 import RecommendByDirector from "./ReccomendByDirector";
@@ -17,6 +14,11 @@ const VideoDetail = ({platform}) => {
    
     const navigate = useNavigate()
     const { id } = useParams()
+    
+    let genres 
+    let genres_string
+    let production 
+    let production_string 
 
 
     useEffect(()=>{
@@ -29,7 +31,8 @@ const VideoDetail = ({platform}) => {
                     navigate('/', {replace: true})
                  }
                 if (data){
-                    setVideo(data)  
+                    setVideo(data)                 
+                    console.log(typeof(data.genres))        
                 }
                 
         }
@@ -43,6 +46,7 @@ const VideoDetail = ({platform}) => {
                  }
                 if (data){
                     setCasts(data)  
+                   
                 }
                 
         }
@@ -66,19 +70,33 @@ const VideoDetail = ({platform}) => {
         fetchCasts()
         
     },[id, navigate,platform])
+    if(video && video!==null){
+        genres = video.genres.slice(1, -1) //to get rid of [ and ]
+        genres_string= genres.replaceAll("\'", "")
+        production = video.production_countries.slice(1, -1) //to get rid of [ and ]
+        production_string = production.replaceAll("\'", "")
+    }
+   
+
+    
+  
 
 
     return ( 
         <div className="video-details">
             <h1>{video.title}</h1>
-            <h3>{video.type} Runtime: {video.runtime}</h3>
+            <h3>{video.type} Runtime: {video.runtime} minutes</h3>
             <h3> {video.age_certification}</h3>
-            <h3>Genre: {video.genres} </h3>
+           
+            <h3>Genre:  </h3>
+            {video && genres_string }
             <h3>Description:</h3>
-            <p> {video.description}</p> 
+            <p> {video.description}</p>
+
             <h3> Release year: </h3>
             <p>{video.release_year}</p>
-            <p>{video.production_countries}</p>
+            <h3>Country</h3>
+            <p>{video && production_string}</p>
             <h3>Characters:</h3>
             {casts && casts.map((cast) => 
             <div className="cast" key={cast.id}>

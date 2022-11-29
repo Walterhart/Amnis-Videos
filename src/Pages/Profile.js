@@ -1,6 +1,4 @@
-import { useEffect, useState } from "react";
 import { supabase } from "../config/supabaseClient";
-import useFetchUser from "../VideoComponents/useFetchUser";
 import { useNavigate } from "react-router-dom";
 import useFetchProfile from "../VideoComponents/useFetechProfile";
 
