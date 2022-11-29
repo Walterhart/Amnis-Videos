@@ -8,6 +8,8 @@ const Netflix = () => {
   const [fetchError, setFetchError] = useState(null)
   const [videos, setvideos] = useState(null)
   const [orderBy, setOrderBy] = useState('title')
+  
+  const [list, setList] = useState("");
 
   useEffect(() => {
     const fetchvideos = async () => {
@@ -21,7 +23,6 @@ const Netflix = () => {
       }
       if (data) {
         setvideos(data)
-        console.log("data",data)
         setFetchError(null)
       }
     }
@@ -31,8 +32,19 @@ const Netflix = () => {
   }, [orderBy])
   
   return (
+
+    
     <div className="page-home">
     {fetchError && (<p>{fetchError}</p>)}
+
+        <input 
+        type="text"
+        placeholder="search..."
+        onChange={(event) => {
+            setList(event.target.value);
+        }}
+        />
+        
      {videos && (
         
       <div className="videos">
@@ -42,7 +54,16 @@ const Netflix = () => {
                 <button onClick={() => setOrderBy('type')}>Type of video</button>
                 <button onClick={() => setOrderBy('release_year')}>Year released</button>
             </div>
-          {videos.map(video =>(
+            {videos && videos.filter((video) => {
+                    if(list === ""){
+                        return video;
+                    }
+                    else if(video.title.toLowerCase()
+                            .includes(list.toLowerCase())){
+                        return video
+                    }
+
+                }).map(video =>(
               <VidoeList key={video.video_id} video={video} platform='Netflix'/>
           ))}
       </div>
