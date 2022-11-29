@@ -30,9 +30,6 @@ const RecocomendByDirector = ({platform, director}) => {
   
     },[])
    
-   
-   
-    
     return ( 
         <div>
         <h3>Reccomend base off of {director.name}:</h3>
