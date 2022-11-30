@@ -19,6 +19,7 @@ const useFetchvideo = ({platform}) => {
                 if (data){
                     setVideos(data)
                     console.log(platform)
+                    setIsPending(false)
                 }
                 
         }
@@ -27,7 +28,7 @@ const useFetchvideo = ({platform}) => {
        
     },[])
 
-    return {videos};
+    return {videos , isPending};
 }
 
  

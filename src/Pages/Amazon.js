@@ -9,7 +9,8 @@ const Amazon = () => {
   const [videos, setvideos] = useState(null)
   const [orderBy, setOrderBy] = useState('title')
   const [list, setList] = useState("");
-
+  const[isLoading,setIsLoading]= useState(true)
+  
   useEffect(() => {
     const fetchvideos = async () => {
       const { data, error } = await supabase
@@ -49,10 +50,13 @@ const Amazon = () => {
         
       <div className="videos">
          <div className="order-by">
-                <p>order by:</p>
+                <p>Order by:</p>
                 <button onClick={() => setOrderBy('title')}>Title</button>
                 <button onClick={() => setOrderBy('type')}>Type of video</button>
                 <button onClick={() => setOrderBy('release_year')}>Year released</button>
+                <button onClick={() => setOrderBy('tmdb_score')}>TMDB score</button>
+                <button onClick={() => setOrderBy('imdb_score')}>IMDB score</button>
+                <button onClick={() => setOrderBy('runtime')}>Length</button>
             </div>
             {videos && videos.filter((video) => {
                     if(list === ""){

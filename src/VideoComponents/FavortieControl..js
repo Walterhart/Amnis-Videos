@@ -6,9 +6,8 @@ import { supabase } from "../config/supabaseClient";
 
 
 const FavoriteControl = ({id, platform, user}) => {
-  console.log(platform)
   
-    const {favorites } =useFetchFavorite(platform)
+    const {favorites, isPending } =useFetchFavorite(platform)
    
     const [isFound,setIsFound] = useState(false)
 
@@ -37,9 +36,6 @@ const FavoriteControl = ({id, platform, user}) => {
           setIsFound(false)
         }
 
-       
-        
-
     }
 
 
@@ -55,9 +51,7 @@ const FavoriteControl = ({id, platform, user}) => {
                 }   
                 return false;
               });
-           
-            
-        
+                
         }
     
         if(favorites !=null)
@@ -66,18 +60,16 @@ const FavoriteControl = ({id, platform, user}) => {
         console.log(isFound)
         
         }
-      
 
       }, [favorites,id,isFound])
     
     return ( 
+      
+        <div className="favorite-control">
 
-    
-        <div> 
           {isFound && isFound===true ?
             <> 
-              <button onClick={() => handleRemove()} ><AiFillStar/></button>    
-              
+              <button onClick={() => handleRemove()} ><AiFillStar/></button>                 
             </>
             :
             <>

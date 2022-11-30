@@ -19,6 +19,7 @@ const useFetchFavorite = (platform) => {
                  }
                 if (data){
                     setFavorites(data)
+                    setIsPending(false)
                 }
                 
         }

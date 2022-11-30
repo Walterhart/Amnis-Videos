@@ -49,10 +49,13 @@ const HBO = () => {
         
       <div className="videos">
          <div className="order-by">
-                <p>order by:</p>
+                <p>Order by:</p>
                 <button onClick={() => setOrderBy('title')}>Title</button>
                 <button onClick={() => setOrderBy('type')}>Type of video</button>
                 <button onClick={() => setOrderBy('release_year')}>Year released</button>
+                <button onClick={() => setOrderBy('tmdb_score')}>TMDB score</button>
+                <button onClick={() => setOrderBy('imdb_score')}>IMDB score</button>
+                <button onClick={() => setOrderBy('runtime')}>Length</button>
             </div>
             {videos && videos.filter((video) => {
                     if(list === ""){

@@ -6,23 +6,25 @@ import VidoeList from "../VideoComponents/VideoList";
 
 
 const Favorite = () => {
-    const {user, isPending} = useFetchUser('')
+   
     const {favorites: netflix} =useFetchFavorite('netflix')
     const {favorites: amazon} =useFetchFavorite('amazon')
     const {favorites: disney} =useFetchFavorite('disney')
     const {favorites: hulu} =useFetchFavorite('hulu')
     const {favorites: paramount} =useFetchFavorite('paramount')
     const {favorites: hbo} =useFetchFavorite('hbo')
+    const {user, isLoading} = useFetchUser('')
     const navigate = useNavigate();
     return ( 
         
         <div>
-        { isPending && <div>Loading...</div> }
+        { isLoading? <> <div>Loading...</div> </>:<>
+
         {user && Object.keys(user).length !== 0?
         <>
-            <h3>Favorite</h3>
+            <h3>Favorites</h3>
 
-           
+            <h2> Amazon</h2>
             {  amazon &&   amazon !==undefined  &&   amazon.map(video =>(
               < VidoeList key={video.video_id} video={video} platform=' amazon'/>
           ))}
@@ -60,6 +62,7 @@ const Favorite = () => {
                       
         </>
         }
+        </>}
    </div>
     );
 }

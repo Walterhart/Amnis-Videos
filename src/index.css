@@ -160,9 +160,12 @@ body{
   text-decoration: none;
 }
 
+.buttons{
+  margin-top: 120px;
+}
 
 .buttons  button {
-  padding: 5px 5px;
+  padding: 15px 15px;
   font-size: 15px;
   text-align: center;
   cursor: pointer;
@@ -171,8 +174,13 @@ body{
   background-color: #fafafa;
   border: 1px solid #42a5f5;
   font-weight: bold;
-  text-align: center;
-  margin: 0 auto;
+  display: block;
+  margin: auto;
+  margin-top: 2x;
+  width: 20%;
+  
+  
+  
 }
 
 .buttons  button:hover {background-color: #fafafa}
@@ -181,4 +189,27 @@ body{
   background-color: #fafafa;
   box-shadow: 0 5px #666;
   transform: translateY(4px);
+  
+}
+
+.favorite-control button{
+
+  background-color: #fafafa;
+  color: #42a5f5;
+  border: 1px solid #42a5f5;
+  border-radius: 10px;
+  margin-top: 10px;
+
+}
+
+.page-home input{
+  text-align: center;
+  margin: auto;
+  display: block;
+}
+
+.order-by {
+  text-align: center;
+  margin: auto;
+  display: block;
 }
