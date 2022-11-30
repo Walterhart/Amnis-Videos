@@ -19,6 +19,7 @@ const Navbar = () => {
             console.log(error)
             return
         }
+        window.location.reload(false);
         navigate('/')
     
     }
@@ -35,7 +36,7 @@ const Navbar = () => {
                 {profile && profile !== undefined ?
             <>
                 <Link to= "/Profile">{profile.user_name} </Link>
-                <button onClick={() => signOutUser()}>Logout</button>    
+                <button onClick={() => signOutUser()}>Logout</button>                
             </>
             :
             <>

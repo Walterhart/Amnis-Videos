@@ -78,9 +78,6 @@ const VideoDetail = ({platform}) => {
     }
    
 
-    
-  
-
 
     return ( 
         <div className="video-details">
@@ -125,7 +122,7 @@ const VideoDetail = ({platform}) => {
             
             {directors && directors!== null && directors.map((director) => (
             
-            <RecommendByDirector key={director.id} director={director}  platform={platform}/> 
+            <RecommendByDirector key={director.id} director={director}  platform={platform} id={id}/> 
         
             
           ))}

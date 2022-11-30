@@ -64,7 +64,7 @@ const Netflix = () => {
                     }
 
                 }).map(video =>(
-              <VidoeList key={video.video_id} video={video} platform='Netflix'/>
+              <VidoeList key={video.video_id} video={video} platform='netflix'/>
           ))}
       </div>
      )}

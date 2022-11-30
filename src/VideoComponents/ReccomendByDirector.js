@@ -32,7 +32,7 @@ const RecommendByDirector = ({platform, director}) => {
         <div>
         <h3>Recommend base off of {director.name}:</h3>
         {videos && videos.map(video =>(
-                <VidoeList key={video.video_id} video={video}/>
+                <VidoeList key={video.video_id} video={video} platform={platform}/>
             ))}
            
         </div>

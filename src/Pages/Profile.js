@@ -11,7 +11,9 @@ const Profile = () => {
         if(error){
             console.log(error)
         }
+        
         navigate('/Login')
+        window.location.reload(false);
 
     }
     

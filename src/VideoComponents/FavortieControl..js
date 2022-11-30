@@ -10,9 +10,7 @@ const FavoriteControl = ({id, platform, user}) => {
    
     const [isFound,setIsFound] = useState(false)
 
-    const handleAdd  = async (e) =>{
-        console.log('clicked')
-        
+    const handleAdd  = async (e) =>{        
     const { data, error } = await supabase
     .rpc('add_favorite_'+platform, {
     user_num: user.id, 
@@ -60,14 +58,12 @@ const FavoriteControl = ({id, platform, user}) => {
         if(favorites !=null)
         {
         fetchCheck()
-        console.log(isFound)
+        
         }
       
 
       }, [favorites,id,isFound])
     
-    
-
     return ( 
 
     

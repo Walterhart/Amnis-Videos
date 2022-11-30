@@ -18,12 +18,12 @@ const Favorite = () => {
         
         <div>
         { isPending && <div>Loading...</div> }
-        {Object.keys(user).length !== 0?
+        {user && Object.keys(user).length !== 0?
         <>
             <h3>Favorite</h3>
 
-            <h2>Amazon</h2>
-            {  amazon &&   amazon !==undefined &&   amazon.map(video =>(
+           
+            {  amazon &&   amazon !==undefined  &&   amazon.map(video =>(
               < VidoeList key={video.video_id} video={video} platform=' amazon'/>
           ))}
 
