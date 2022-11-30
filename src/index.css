@@ -159,3 +159,26 @@ body{
 .login link{
   text-decoration: none;
 }
+
+
+.buttons  button {
+  padding: 5px 5px;
+  font-size: 15px;
+  text-align: center;
+  cursor: pointer;
+  outline: none;
+  color: #42a5f5;
+  background-color: #fafafa;
+  border: 1px solid #42a5f5;
+  font-weight: bold;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.buttons  button:hover {background-color: #fafafa}
+
+.buttons button:active {
+  background-color: #fafafa;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}

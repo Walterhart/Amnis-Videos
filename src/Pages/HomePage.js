@@ -34,7 +34,7 @@ const HomePage = () => {
     
       }
     return ( 
-        <div className="homePage">
+        <div className="page-home">
             <button onClick={() => selectPlatform('Amazon')}>Amazon</button>
             <button onClick={() => selectPlatform('Disney')}>Disney</button>
             <button onClick={() => selectPlatform('HBO')}>HBO</button>  
